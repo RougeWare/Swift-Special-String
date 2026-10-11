@@ -15,7 +15,7 @@ import SpecialString
 
 struct NotAString: EssentiallyAString {
     
-    let rawValue: String
+    var rawValue: String
     
     init(rawValue: String) {
         self.rawValue = rawValue
