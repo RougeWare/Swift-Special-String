@@ -33,7 +33,8 @@ public extension SpecialString {
 extension SpecialString: EssentiallyAString {
     
     /// A requirement. Use `withoutTypeSafety()` instead.
-    /// Attempting to use this to mutate this string will be ignored silently.
+    ///
+    /// Attempting to use this to mutate this special string will be ignored silently.
     @available(*,
         deprecated,
         renamed: "withoutTypeSafety()",
