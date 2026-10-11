@@ -2,66 +2,14 @@
 //  EssentiallyAString.swift
 //  SpecialString
 //
-//  Created by Ben Leggiero on 2019-10-02.
+//  Created by Ky on 2026-10-11.
 //
 
-import Foundation
 
 
-
-/// Any type which is technically not a string, but is essentially a string
-public protocol EssentiallyAString:
-    RawRepresentable,
-    ExpressibleByStringLiteral,
-    LosslessStringConvertible,
-    Hashable,
-    Codable
-where
-    RawValue == String,
-    StringLiteralType == String
-{
-    init(rawValue: String)
-}
+// ⚠️ As of version 1.3, this protocol has been moved to [its own package](https://github.com/KyNorthstar/Swift-EssentiallyAString) and exported from this one. It will remain exported from this package until version 2, when it will no longer be exported and you'll have to import it seprately.
+//
+// That means you can continue to use `EssentallyAString` just by importing `SpecialString` for now, but in the future you'll also have to `import EssentiallyAString` in order to use `EssentiallyAString`.
 
 
-
-// MARK: - ExpressibleByStringLiteral
-
-public extension EssentiallyAString {
-    init(stringLiteral value: Self.StringLiteralType) {
-        self.init(rawValue: value)
-    }
-}
-
-
-
-// MARK: - LosslessStringConvertible
-
-public extension EssentiallyAString {
-    
-    var description: String { rawValue }
-    
-    init(_ description: String) {
-        self.init(rawValue: description)
-    }
-}
-
-
-
-// MARK: - Hashable
-
-public extension EssentiallyAString {
-    func hash(into hasher: inout Hasher) {
-        rawValue.hash(into: &hasher)
-    }
-}
-
-
-
-// MARK: - Equatable
-
-public extension EssentiallyAString {
-    static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.rawValue == rhs.rawValue
-    }
-}
+@_exported import EssentiallyAString

@@ -23,6 +23,10 @@ Identifiers are very commonly strings, so they are perfect use cases for `Specia
 
 ## `EssentiallyAString` ##
 
+> ⚠️ As of version 1.3, this protocol has been moved to [its own package](https://github.com/KyNorthstar/Swift-EssentiallyAString) and exported from this one. It will remain exported from this package until version 2, when it will no longer be exported and you'll have to import it seprately.
+>
+> That means you can continue to use `EssentallyAString` just by importing `SpecialString` for now, but in the future you'll also have to `import EssentiallyAString` in order to use `EssentiallyAString`.
+
 This package also includes the handy protocol `EssentiallyAString`, which helps you make types which are essentially strings. This greatly improves the ergonomics of `SpecialString`, letting you use it in most of the ways a `String` can be used.
 
 Feel free to use `EssentiallyAString` for other things!
